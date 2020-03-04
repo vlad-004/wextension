@@ -1,0 +1,30 @@
+{
+  "name": "Walmart extension",
+  "description": "Checking brand name and images count in search query result.",
+  "version": "1.4",
+  "manifest_version": 2,
+  "permissions": [
+    "storage",
+    "activeTab",
+    "declarativeContent"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.walmart.com/search/*"
+      ],
+      "js": [
+        "jquery-3.4.1.min.js",
+        "content.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_icon": "walmart_extensions.png",
+    "default_popup": "popup.html"
+  }
+}
